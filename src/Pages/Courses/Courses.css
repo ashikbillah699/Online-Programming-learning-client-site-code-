@@ -1,0 +1,14 @@
+.course {
+    background-color: rgb(190, 240, 240);
+    border: 1px solid gray;
+}
+
+.course-header {
+    background-color: rgb(190, 240, 240) !important;
+    text-align: center;
+    border: 1px solid gray !important;
+}
+
+.course-img {
+    height: 300px;
+}

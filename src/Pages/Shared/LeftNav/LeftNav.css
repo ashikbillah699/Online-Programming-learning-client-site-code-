@@ -1,0 +1,13 @@
+.course-name {
+    text-decoration: none;
+    background-color: rgb(190, 240, 240);
+    box-shadow: 10px 10px 20px rgb(23, 24, 24);
+    padding: 20px 5px;
+    margin: 10px 0;
+    color: rgb(6, 71, 71);
+}
+
+.course-name:hover {
+    color: rgb(2, 17, 17);
+    box-shadow: 10px 10px 5px rgb(52, 54, 54);
+}
