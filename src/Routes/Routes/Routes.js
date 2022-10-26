@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../leyout/Main";
 import Courses from "../../Pages/Courses/Courses";
 import CoursesDetails from "../../Pages/Home/CoursesDetails/CoursesDetails";
+import Login from "../../Pages/Login/Login/Login";
+import Register from "../../Pages/Login/Register/Register";
 
 
 
@@ -20,6 +22,14 @@ export const routes = createBrowserRouter([
                 element: <CoursesDetails></CoursesDetails>,
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
             },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            }
         ]
     }
 ])

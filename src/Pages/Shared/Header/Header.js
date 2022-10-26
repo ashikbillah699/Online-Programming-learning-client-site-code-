@@ -11,7 +11,14 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import './Header.css';
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const haldleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar className='header' expand="lg">
             <Container>
@@ -32,7 +39,18 @@ const Header = () => {
                             <Image className='pe-1' style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image> :
                             <FaUser></FaUser>
                     }
-                    {user?.displayName}
+                    {
+                        user?.uid ?
+                            <>
+                                <span> {user?.displayName}</span>
+                                <Button variant="dark" onClick={haldleLogOut}>Logout</Button>
+                            </> :
+                            <>
+                                <Link to='/login'>Login</Link>
+                                <Link to='/register'>Register</Link>
+                            </>
+
+                    }
                 </div>
                 <Button variant="dark">Dark</Button>
             </Container>
