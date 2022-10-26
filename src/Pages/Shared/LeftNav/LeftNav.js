@@ -15,7 +15,7 @@ const LeftNav = () => {
 
     return (
         <div className='left-nav'>
-            <h3 className='fw-semibold my-5'>OUR COURSES : {allCourses.length}</h3>
+            <h3 className='fw-semibold my-5'>OUR COURSES :{allCourses.length}</h3>
             <div className=' '>
                 {
                     allCourses.map(course => <div key={course.id}>

@@ -5,7 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const CoursesDetails = () => {
     const course = useLoaderData()
 
-    const { name, image, details, time, Limit } = course;
+    const { id, name, image, details, time, Limit } = course;
     return (
         <div>
             <Card className='course mt-5'>
@@ -24,7 +24,8 @@ const CoursesDetails = () => {
                     <Card.Text>
                         <span className='fs-5'> Seats : {Limit}</span>
                     </Card.Text>
-                    <Link to='/'> <Button variant="primary">Home</Button></Link>
+                    <Link className='me-4' to='/'> <Button variant="primary">Home</Button></Link>
+                    <Link to={`/premium/${id}`}><Button variant="primary">Get Premium Access</Button></Link>
                 </Card.Body>
             </Card>
         </div>
