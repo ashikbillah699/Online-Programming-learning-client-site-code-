@@ -12,6 +12,7 @@ import './Header.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    console.log(user)
 
     const haldleLogOut = () => {
         logOut()
@@ -23,7 +24,7 @@ const Header = () => {
         <Navbar className='header' expand="lg">
             <Container>
                 <Navbar.Brand href="#home"><img className='logo' src={Logo} alt="" /></Navbar.Brand>
-                <Navbar.Brand className='text-dark fw-bold fs-3' href="#home">OnLine Programming Lerning</Navbar.Brand>
+                <Navbar.Brand><Link className='text-dark text-decoration-none fw-bold fs-3' to='/'>OnLine Programming Lerning</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -52,7 +53,6 @@ const Header = () => {
 
                     }
                 </div>
-                <Button variant="dark">Dark</Button>
             </Container>
         </Navbar>
     );
