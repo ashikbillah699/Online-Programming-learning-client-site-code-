@@ -43,7 +43,7 @@ const Header = () => {
                     {
                         user?.uid ?
                             <>
-                                <span> {user?.displayName}</span>
+                                <span className='pe-2'> {user?.displayName}</span>
                                 <Button variant="dark" onClick={haldleLogOut}>Logout</Button>
                             </> :
                             <>

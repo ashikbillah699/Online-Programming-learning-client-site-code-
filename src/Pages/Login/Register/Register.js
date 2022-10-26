@@ -7,7 +7,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { creatUser } = useContext(AuthContext);
+    const { creatUser, updateUser } = useContext(AuthContext);
     const [accept, setAccept] = useState(false);
 
     const handleAccept = event => {
@@ -18,10 +18,10 @@ const Register = () => {
         event.preventDefault()
         const form = event.target;
         const name = form.name.value;
-        const photoUrl = form.photoUrl.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoUrl, email, password);
+        console.log(name, photoURL, email, password);
 
         creatUser(email, password)
             .then(result => {
@@ -29,12 +29,26 @@ const Register = () => {
                 console.log(user);
                 form.reset();
                 setError('')
+                handleUpdateUser(name, photoURL)
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
             })
     }
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUser(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
+
+
+    }
+
     return (
         <Form onSubmit={handleRegister} className='mt-5'>
             <span className='fs-4 fw-semibold'>Registation</span>
@@ -44,7 +58,7 @@ const Register = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className='fs-5 fw-semibold'>Photo URL</Form.Label>
-                <Form.Control name="photoUrl" type="text" placeholder=" Enter PhotoUrl" />
+                <Form.Control name="photoURL" type="text" placeholder=" Enter photoURL" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className='fs-5 fw-semibold'>Email address</Form.Label>
@@ -60,7 +74,7 @@ const Register = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" onClick={handleAccept} label={<>Accept <Link to='/register'>terms abd conditions</Link></>} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" disabled={!accept}>
                 Register
             </Button>
         </Form>
