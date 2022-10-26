@@ -8,7 +8,7 @@ const LeftNav = () => {
     const [allCourses, setSllCourses] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/course_details')
+        fetch('http://localhost:5000/courses')
             .then(res => res.json())
             .then(data => setSllCourses(data))
     }, [])
@@ -19,7 +19,7 @@ const LeftNav = () => {
             <div className=' '>
                 {
                     allCourses.map(course => <div key={course.id}>
-                        <Link className='course-name d-block fs-4' to={`/courses/${course.id}`}><h4>{course.name}</h4></Link>
+                        <Link className='course-name d-block fs-4' to={`/course/${course.id}`}><h4>{course.name}</h4></Link>
                     </div>)
                 }
             </div>
