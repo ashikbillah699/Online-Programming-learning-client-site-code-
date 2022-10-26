@@ -19,7 +19,7 @@ const LeftNav = () => {
             <div className=' '>
                 {
                     allCourses.map(course => <div key={course.id}>
-                        <Link className='course-name d-block fs-4' to={`/course/${course.id}`}><h4>{course.name}</h4></Link>
+                        <Link className='course-name d-block fs-4' to={`/course/${course.id}`}>{course.name}</Link>
                     </div>)
                 }
             </div>

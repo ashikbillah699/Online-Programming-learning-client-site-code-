@@ -14,7 +14,7 @@ const CoursesDetails = () => {
                 <Card.Body className='course'>
                     <Card.Img className='course-img mb-3' src={image} />
                     <Card.Text>
-                        <h4>Course Moderator : {course.course_moderator}</h4>
+                        <span className='fs-4'>Course Moderator : {course.course_moderator}</span>
                     </Card.Text>
                     <Card.Text>
                         <span className='fw-semibold fs-5'>Full Course : {time}</span>
