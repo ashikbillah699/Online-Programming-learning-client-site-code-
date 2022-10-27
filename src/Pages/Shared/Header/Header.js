@@ -32,13 +32,14 @@ const Header = () => {
                         <Link className='text-decoration-none text-dark pt-1 pe-3' to="/">Courses</Link>
                         <Link className='text-decoration-none text-dark pt-1 pe-3' to="/blog">Blog</Link>
                         <Link className='text-decoration-none text-dark pt-1 pe-3' to="/faq">FAQ</Link>
+                        <div>
+                            <label className="switch">
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
                     </Nav>
-                    <div>
-                        <label className="switch">
-                            <input type="checkbox" checked />
-                            <span className="slider round"></span>
-                        </label>
-                    </div>
+
                 </Navbar.Collapse>
                 <div className='pe-2'>
                     {
