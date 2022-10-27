@@ -54,8 +54,9 @@ const Header = () => {
                                 <Button variant="dark" onClick={haldleLogOut}>Logout</Button>
                             </> :
                             <>
-                                <Link to='/login'>Login</Link>
-                                <Link to='/register'>Register</Link>
+                                <Button variant="info" className='me-2 ms-2 text-decoration-none'><Link className='text-dark text-decoration-none' to='/login'>Login</Link></Button>{' '}
+                                <Button variant="info"><Link className='text-decoration-none text-dark' to='/register'>Register</Link></Button>{' '}
+
                             </>
 
                     }

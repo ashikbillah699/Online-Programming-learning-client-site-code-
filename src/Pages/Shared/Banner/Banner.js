@@ -5,14 +5,15 @@ import Banner1 from '../../../assets/banner/bannerNew2.jpg'
 import Banner2 from '../../../assets/banner/bannerNew3.jpg'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Banner = () => {
-    const { googleLogin } = useContext(AuthContext)
-    const gProvider = new GoogleAuthProvider()
+    const { googleLogin, fbSignUp } = useContext(AuthContext);
+    const gProvider = new GoogleAuthProvider();
+    const fProvider = new FacebookAuthProvider();
 
     const handleGoogleLogin = () => {
         googleLogin(gProvider)
@@ -22,6 +23,16 @@ const Banner = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const handlefbSignUp = () => {
+        fbSignUp(fProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
 
     return (
         <Carousel fade className='d-none d-lg-block mb-3'>
@@ -36,7 +47,7 @@ const Banner = () => {
                     <ButtonGroup vertical>
                         <h1 className='mb-5 text-dark fst-italic fs-1'>Online Programming Learning</h1>
                         <Button className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaGoogle></FaGoogle> Login with google</Button>
-                        <Button className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaGithub></FaGithub> Login with github</Button>
+                        <Button className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaFacebook></FaFacebook> Login with github</Button>
                     </ButtonGroup>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -52,7 +63,7 @@ const Banner = () => {
                     <ButtonGroup vertical>
                         <h1 className='mb-5 text-dark fst-italic fs-1'>Online Programming Learning</h1>
                         <Button onClick={handleGoogleLogin} className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaGoogle></FaGoogle> Login with google</Button>
-                        <Button className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaGithub></FaGithub> Login with github</Button>
+                        <Button onClick={handlefbSignUp} className='mb-2 ms-5' style={{ width: '400px' }} variant="outline-dark"><FaFacebook></FaFacebook> Login with github</Button>
                     </ButtonGroup>
                 </Carousel.Caption>
             </Carousel.Item>

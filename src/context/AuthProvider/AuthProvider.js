@@ -26,7 +26,13 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUser = (profile) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, profile)
+    }
+
+    const fbSignUp = (proveier) => {
+        setLoading(true)
+        return signInWithPopup(auth, proveier)
     }
 
     const logOut = () => {
@@ -45,7 +51,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const authInfo = { user, loading, googleLogin, logOut, creatUser, signIn, updateUser }
+    const authInfo = { user, loading, googleLogin, logOut, creatUser, signIn, updateUser, fbSignUp }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

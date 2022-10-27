@@ -77,6 +77,7 @@ const Register = () => {
             <Button variant="primary" type="submit" disabled={!accept}>
                 Register
             </Button>
+            <small className='ms-3'>Please <Link to='/login'>Login</Link></small>
         </Form>
     );
 };

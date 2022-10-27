@@ -1,3 +1,5 @@
+import { Image } from "react-bootstrap";
+import Error from '../../../src/assets/banner/404-page-not-found-banner-error-design-vector-21065187.jpg'
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../leyout/Main";
 import Blog from "../../Pages/Blog/Blog";
@@ -7,6 +9,7 @@ import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import PremiumAccess from "../../Pages/PremiumAcces/PremiumAccess";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import './Route.css'
 
 
 
@@ -41,11 +44,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
-            },
-            {
-                path: '*',
-                element: <div><div className="fs-1 fw-bolder text-center mt-5 pt-5">404</div><div className="fs-1 fw-bolder text-center">THIS SITE IS NOT FOUND</div></div>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <Image className="error-img" src={Error}></Image>
     }
 ])
