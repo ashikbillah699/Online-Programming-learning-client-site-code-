@@ -10,6 +10,9 @@ const CourseCart = ({ course }) => {
             <Card.Body className='course'>
                 <Card.Img className='course-img mb-3' src={image} />
                 <Card.Text>
+                    <span className='fw-semibold fs-5'>Course Moderator : {course.course_moderator}</span>
+                </Card.Text>
+                <Card.Text>
                     <span className='fw-semibold fs-5'>Full Course : {time}</span>
                 </Card.Text>
                 <Card.Text>

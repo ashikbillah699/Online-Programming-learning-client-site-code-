@@ -30,9 +30,15 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Link className='text-decoration-none text-dark pt-1 pe-3' to="/">Home</Link>
                         <Link className='text-decoration-none text-dark pt-1 pe-3' to="/">Courses</Link>
-                        <Link className='text-decoration-none text-dark pt-1 pe-3' href="/blog">Blog</Link>
-                        <Link className='text-decoration-none text-dark pt-1 pe-3' href="/faq">FAQ</Link>
+                        <Link className='text-decoration-none text-dark pt-1 pe-3' to="/blog">Blog</Link>
+                        <Link className='text-decoration-none text-dark pt-1 pe-3' to="/faq">FAQ</Link>
                     </Nav>
+                    <div>
+                        <label className="switch">
+                            <input type="checkbox" checked />
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
                 </Navbar.Collapse>
                 <div className='pe-2'>
                     {

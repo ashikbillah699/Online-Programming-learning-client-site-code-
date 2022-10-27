@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../leyout/Main";
+import Blog from "../../Pages/Blog/Blog";
 import Courses from "../../Pages/Courses/Courses";
 import CoursesDetails from "../../Pages/Home/CoursesDetails/CoursesDetails";
 import Login from "../../Pages/Login/Login/Login";
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
                 path: '/premium/:id',
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }
