@@ -44,7 +44,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '*',
-                element: <div><div className="fs-1 fw-bolder text-center mt-5 pt-5">404</div><div className="fs-1 fw-bolder text-center">THIS SITE IS EMPTY</div></div>
+                element: <div><div className="fs-1 fw-bolder text-center mt-5 pt-5">404</div><div className="fs-1 fw-bolder text-center">THIS SITE IS NOT FOUND</div></div>
             }
         ]
     }
